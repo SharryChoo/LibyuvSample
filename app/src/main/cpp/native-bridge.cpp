@@ -14,7 +14,6 @@ JNI_OnLoad(JavaVM *javaVM, void *reserverd) {
     if (javaVM->GetEnv(reinterpret_cast<void **>(&env), JNI_VERSION_1_6) != JNI_OK) {
         return -1;
     }
-    // 注册 SAudioPlayer 函数
     jclass jAudioPlayerCls = env->FindClass(NV21_UTIL_CLASS_NAME);
     jAudioPlayerCls = reinterpret_cast<jclass>(env->NewGlobalRef(jAudioPlayerCls));
     if (!jAudioPlayerCls) {
